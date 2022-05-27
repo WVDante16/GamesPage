@@ -11,6 +11,7 @@ function HomeScreen({navigation}) {
 
             <Button
                 title="Ver Los Juegos"
+                color="#ae52d4"
                 onPress={() => navigation.navigate('Games')}
             />
         </View>

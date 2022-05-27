@@ -5,21 +5,22 @@ export default StyleSheet.create({
         flex: 1, 
         flexDirection: 'column',
         alignItems: 'center', 
+        backgroundColor: '#9e9e9e'
     },
 
     text: {
         alignSelf: 'flex-start',
         fontSize: 28,
         fontWeight: 'bold',
-        marginBottom: 10,
-        marginLeft: 16,
+        marginBottom: 15,
+        marginLeft: 20,
     },
 
     textDescription: {
-        alignSelf: 'flex-start',
-        fontSize: 16,
+        alignItems: 'center',
+        fontSize: 18,
+        fontWeight: 'bold',
         marginBottom: 20,
-        marginLeft: 16,
     },
 
     image: {
@@ -30,5 +31,4 @@ export default StyleSheet.create({
         borderBottomLeftRadius: 0,
         marginBottom: 16,
     },
-
 });
