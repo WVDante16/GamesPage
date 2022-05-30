@@ -2,12 +2,12 @@ import React from 'react';
 import {StyleSheet, View, Text, Button, Image} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-function Box({id, name, description}) {
+function Box({id, name, description, image}) {
     const navigation = useNavigation();
 
     return (
         <View stile={styles.root}>
-            <Text>Aqui deberia estar la imagen</Text>
+            <Image source={{uri: image}} resizeMode="contain" style={styles.image} />
             <View style={styles.infoContainer}>
                 <Text style={styles.title}>{name}</Text>
                 <Text style={styles.text}>{description}</Text>
