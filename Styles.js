@@ -29,6 +29,6 @@ export default StyleSheet.create({
         borderRadius: 3,
         borderBottomRightRadius: 0,
         borderBottomLeftRadius: 0,
-        marginBottom: 16,
+        marginBottom: 15,
     },
 });

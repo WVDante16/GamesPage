@@ -1,29 +1,42 @@
 import React from 'react';
-import {View, StyleSheet, ScrollView} from 'react-native';
-import Box from './Box';
+import {View, StyleSheet, ScrollView, Image, Text, Button} from 'react-native';
 
-const games = [
-    {id: 1, name: "Guess My Number", description: "Encuentra el numero", image: "https://img.freepik.com/vector-gratis/vector-tipografia-estilo-basura-trazo-pincel-signo-interrogacion_53876-140880.jpg?w=2000"},
-    {id: 2, name: "RockPaperScissors", description: "Resolver disputas", image: "https://www.contramuro.com/wp-content/uploads/2017/05/piedra-papel-o-tijera.jpg"},
-    {id: 3, name: "No se que hare pero estoy muy nervioso", description: "Juego funky", image: "https://www.elheraldodetabasco.com.mx/doble-via/virales/m4h1ee-meme1.png/ALTERNATES/LANDSCAPE_1140/meme1.png"},
-]
-
-function GamesScreen({}) {
+function GamesScreen({navigation}) {
     return (
         <View style={styles.root}>
             <ScrollView>
-                <View style = {styles.containerBox}>
-                    {
-                        games.map((game, i) => (
-                            <Box
-                                key = {i}
-                                id = {game.id}
-                                name = {game.name}
-                                description = {game.description}
-                                image = {game.image}
-                            />
-                        ))
-                    }
+                <Image 
+                    source={require('./assets/GuessTheNumber.png')} resizeMode="stretch" style={styles.image} />
+                <View style={styles.infoContainer}>
+                    <Text style={styles.title}>Guess My Number</Text>
+                    <Text style={styles.text}>Encuentra el numero</Text>
+                    <Button 
+                        color="#ae52d4"
+                        title="Jugar"
+                        onPress={() => navigation.navigate('Guess My Number')}
+                    />
+                </View>
+
+                <Image source={require('./assets/RockPaperScissors.png')} resizeMode="stretch" style={styles.image} />
+                <View style={styles.infoContainer}>
+                    <Text style={styles.title}>Rock Paper Scissors</Text>
+                    <Text style={styles.text}>Resolver disputas</Text>
+                    <Button 
+                        color="#ae52d4"
+                        title="Jugar"
+                        onPress={() => navigation.navigate('Piedra Papel O Tijeras')}
+                    />
+                </View>
+
+                <Image source={require('./assets/YPerry.png')} resizeMode="stretch" style={styles.image} />
+                <View style={styles.infoContainer}>
+                    <Text style={styles.title}>Y Perry?</Text>
+                    <Text style={styles.text}>Encontrar a Perry el Ornitorrinco</Text>
+                    <Button 
+                        color="#ae52d4"
+                        title="Jugar"
+                        onPress={() => navigation.navigate('Y Perry?')}
+                    />
                 </View>
             </ScrollView>
         </View>
@@ -45,6 +58,33 @@ const styles = StyleSheet.create({
 
     margin: {
         marginBottom: 50
+    },
+
+    image: {
+        width: '100%',
+        height: 180,
+        justifyContent: "center",
+        borderRadius: 3,
+        borderBottomRightRadius: 0,
+        borderBottomLeftRadius: 0,
+        marginBottom: 0,
+    },
+
+    infoContainer: {
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        padding: 15,
+        marginBottom: 40,
+    },
+
+    title: {
+        fontSize: 16,
+        fontWeight: "bold",
+    },
+
+    text: {
+        fontSize: 12,
+        marginBottom: 8,
     }
 })
 
