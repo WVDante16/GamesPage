@@ -8,6 +8,7 @@ function FindBall() {
     const [seleccion, setSelected] = useState("");
     const [seleccionComputadora, setConputadoraSeleccion] = useState("");
     const [win, setWin] = useState(false);
+    const [count, setCount] = useState(0);
 
     const play = () => {
         if (!seleccion) {
@@ -18,10 +19,12 @@ function FindBall() {
             setConputadoraSeleccion(elecciones[computadoraSeleccionRandom]);
             
             if (seleccionComputadora === seleccion) {
+                setCount(count + 1);
                 setWin(true);
                 return alert("Encontraste a Perry!")
             } 
             else {
+                setCount(count + 1);
                 return alert("No encontraste a Perry UnU")
             }
         }        
@@ -73,9 +76,18 @@ function FindBall() {
 
             {
                 win?
+                    <Text style={styles.text}>Encontraste a Perry en {count} busquedas!</Text>
+                :
+                    <Text></Text>
+
+            }
+
+            {
+                win?
                     <Image source={require('../assets/Perry.jpg')} resizeMode="stretch" style={styles.perry} />
                 :
                     <Text style={styles.text}>Donde estara Perry?</Text>
+
             }
 
         </View>
