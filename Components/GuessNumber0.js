@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
     description: {
         fontSize: 20,
         padding: 5,
+        marginTop: 25,
     },
 })
 
